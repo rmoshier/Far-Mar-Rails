@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   def create
     @vendor = Vendor.new(params.require(:vendor).permit(:name))
     @vendor.save
-    redirect_to root_path
+    redirect_to "/"
+    # redirect_to root_path
   end
 end
