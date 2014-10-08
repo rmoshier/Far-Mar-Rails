@@ -1,1 +1,6 @@
-stuff
+<h2>New Vendor</h2>
+
+  <%= form_for @vendor do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create new vendor" %>
+  <% end %>

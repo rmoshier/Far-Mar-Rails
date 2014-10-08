@@ -3,6 +3,12 @@ class HomeController < ApplicationController
   end
 
   def new_vendor
+    @vendor=Vendor.new
   end
 
+  def create
+    @vendor = Vendor.new(params.require(:vendor).permit(:name))
+    @post.save
+    redirect_to root_path
+  end 
 end
