@@ -16,6 +16,8 @@
 
 body{
   background-color: #fdf6e3;
+  /*display: inline-block;*/
+  text-align: center;
 }
 
 h1{
@@ -43,5 +45,5 @@ h3{
 }
 
 a:hover{
-  color: #d33682 
+  color: #d33682
 }
