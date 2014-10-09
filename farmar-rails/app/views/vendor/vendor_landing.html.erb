@@ -1,3 +1,5 @@
 <h1> Thank you for creating a new id, <%= @vendor.name %>. Welcome to the Vendor Landing Page! </h1>
 
 <%= link_to "Edit", edit_vendor_path(@vendor.id) %> <!-- vendor? vendors? -->
+<br>
+<a href="/vendor/<%=@vendor.id%>/destroy">Delete Vendor</a>

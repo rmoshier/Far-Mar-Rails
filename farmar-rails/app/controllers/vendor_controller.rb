@@ -25,9 +25,17 @@ class VendorController < ApplicationController
       render :edit
     end
   end
-    
+
   def edit
     @vendor= Vendor.find(params[:id])
+  end
+
+  def destroy
+    Vendor.find(params[:id]).destroy
+  end
+
+  def destroy_landing
+    @vendor=Vendor.find(params[:id])
   end
 
   private
@@ -37,4 +45,3 @@ class VendorController < ApplicationController
   end
 
 end
-
