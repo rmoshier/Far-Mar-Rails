@@ -31,7 +31,9 @@ class VendorController < ApplicationController
   end
 
   def destroy
-    Vendor.find(params[:id]).destroy
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+    redirect_to "/"
   end
 
   def destroy_landing

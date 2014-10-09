@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get "/vendor/:id/edit",           to: "vendor#edit", as: :edit_vendor
   put "/vendor/:id",                to: "vendor#update"
-  get "/vendor/:id/destroy",        to: "vendor#destroy_landing"
+  get "/vendor/:id/destroy_landing",to: "vendor#destroy_landing"
+  get "/vendor/:id/destroy",        to: "vendor#destroy"
 
   root "home#index"
 
