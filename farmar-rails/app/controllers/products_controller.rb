@@ -32,6 +32,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @holder = @product.vendor_id
+    @product.destroy
+    redirect_to "/product/#{@holder}/product_list"
+  end
+
+  def destroy_landing
+    @product=Product.find(params[:id])
+  end
+
   private
 
   def product_params

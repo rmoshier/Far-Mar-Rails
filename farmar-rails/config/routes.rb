@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   post "/product/new_product",      to: "products#create"
   get "/product/:id/product_list",  to: "products#product_list"
   get "/product/:id/edit",          to: "products#edit", as: :edit_product
-  put "/product/:id",               to: "products#update" 
+  put "/product/:id",               to: "products#update"
+  get "/product/:id/destroy_landing", to: "products#destroy_landing", as: :delete_product_landing
+  get "/product/:id/destroy",       to: "products#destroy", as: :delete_product 
   root "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
