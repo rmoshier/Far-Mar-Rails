@@ -13,6 +13,24 @@ class ProductsController < ApplicationController
       redirect_to "/product/new_product"
     end
   end
+  
+  def product_list
+    @products = Product.all
+    #@product.vendor_id = session[:v_id]     
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product=Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to "/product/#{@product.vendor_id}/product_list"
+    else
+      render :edit
+    end
+  end
 
   private
 
@@ -20,36 +38,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name)
   end
 
-  # def new_vendor
-  #   @vendor=Vendor.new
-  # end
-  #
-  # def create
-  #   @vendor = Vendor.new(vendor_params)
-  #   @vendor.save
-  #   #session[:v_id] = @vendor.id
-  #   redirect_to "/vendor/#{@vendor.id}/vendor_landing" #maybe want to take this out?
-  # end
-  #
-  # def vendor_landing
-  #   #@v = Vendor.find(session[:v_id])
-  #   @vendor=Vendor.find(params[:id])
-  #   #redirect_to "/vendor/#{@vendor.id}/vendor_landing"
-  # end
-  #
-  # def update
-  #   @vendor=Vendor.find(params[:id])
-  #   if @vendor.update(vendor_params)
-  #     redirect_to "/vendor/#{@vendor.id}/vendor_landing"
-  #   else
-  #     render :edit
-  #   end
-  # end
-  #
-  # def edit
-  #   @vendor= Vendor.find(params[:id])
-  # end
-  #
+
   # def destroy
   #   @vendor = Vendor.find(params[:id])
   #   @vendor.destroy
@@ -58,12 +47,6 @@ class ProductsController < ApplicationController
   #
   # def destroy_landing
   #   @vendor=Vendor.find(params[:id])
-  # end
-  #
-  # private
-  #
-  # def vendor_params
-  #   params.require(:vendor).permit(:name)
   # end
 
 end

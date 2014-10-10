@@ -7,6 +7,5 @@
 <hr>
 
 <%= link_to "Add Product", add_product_path(@vendor.id) %>
-<ul>edit products</ul>
-<ul>delete a product</ul>
-<ul>view all of the products</ul>
+<br>
+<a href="/product/<%=@vendor.id%>/product_list">View all products</a>
