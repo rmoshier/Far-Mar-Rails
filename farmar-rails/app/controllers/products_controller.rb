@@ -8,15 +8,15 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.vendor_id = session[:v_id]
     if @product.save
-      redirect_to "/vendor/#{session[:v_id]}/vendor_landing"
+      redirect_to "/product/#{@product.vendor_id}/product_list"
     else
       redirect_to "/product/new_product"
     end
   end
-  
+
   def product_list
     @products = Product.all
-    #@product.vendor_id = session[:v_id]     
+    #@product.vendor_id = session[:v_id]
   end
 
   def edit
