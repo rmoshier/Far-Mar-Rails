@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   get "/product/:id/destroy_landing", to: "products#destroy_landing", as: :delete_product_landing
   get "/product/:id/destroy",       to: "products#destroy", as: :delete_product
 
-  get "/market/new_market",          to: "markets#new_market", as: :add_market
+  get "/market/new_market",         to: "markets#new_market", as: :add_market
   post "/market/new_market",        to: "markets#create"
+  get "/market/:id/edit",           to: "markets#edit", as: :edit_market
+  put "/market/:id",                to: "markets#update"
 
   root "home#index"
 

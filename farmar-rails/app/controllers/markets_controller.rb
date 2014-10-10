@@ -16,29 +16,28 @@ class MarketsController < ApplicationController
     end
   end
 
+  def update
+    @market=Market.find(params[:id])
+    if @market.update(market_params)
+      redirect_to "/vendor/#{session[:v_id]}/vendor_landing"
+    else
+      render :edit
+    end
+  end
+
+  def edit
+    @holder = Vendor.find(params[:id]).market.id
+    @market = Market.find(@holder)
+  end
+
 private
 
   def market_params
     params.require(:market).permit(:name)
   end
 
-  # def product_list
-  #   @products = Product.all
-  #   #@product.vendor_id = session[:v_id]
-  # end
-  #
-  # def edit
-  #   @product = Product.find(params[:id])
-  # end
-  #
-  # def update
-  #   @product=Product.find(params[:id])
-  #   if @product.update(product_params)
-  #     redirect_to "/product/#{@product.vendor_id}/product_list"
-  #   else
-  #     render :edit
-  #   end
-  # end
+
+
   #
   # def destroy
   #   @product = Product.find(params[:id])
@@ -51,17 +50,5 @@ private
   #   @product=Product.find(params[:id])
   # end
   #
-
-
-
-  # def destroy
-  #   @vendor = Vendor.find(params[:id])
-  #   @vendor.destroy
-  #   redirect_to "/"
-  # end
-  #
-  # def destroy_landing
-  #   @vendor=Vendor.find(params[:id])
-  # end
 
 end
