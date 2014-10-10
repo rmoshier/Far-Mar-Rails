@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
   get "/", to: "home#index"
-  get "/vendor/new_vendor",         to: "vendor#new_vendor"
-  post "/vendor/new_vendor",        to: "vendor#create"
-  get "/vendor/:id/vendor_landing", to: "vendor#vendor_landing"
+  get "/vendor/new_vendor",         to: "vendors#new_vendor"
+  post "/vendor/new_vendor",        to: "vendors#create"
+  get "/vendor/:id/vendor_landing", to: "vendors#vendor_landing"
   #something is wrong here
 
-  get "/vendor/:id/edit",           to: "vendor#edit", as: :edit_vendor
-  put "/vendor/:id",                to: "vendor#update"
-  get "/vendor/:id/destroy_landing",to: "vendor#destroy_landing"
-  get "/vendor/:id/destroy",        to: "vendor#destroy"
-
+  get "/vendor/:id/edit",           to: "vendors#edit", as: :edit_vendor
+  put "/vendor/:id",                to: "vendors#update"
+  get "/vendor/:id/destroy_landing",to: "vendors#destroy_landing"
+  get "/vendor/:id/destroy",        to: "vendors#destroy"
+  get "/product/new_product",       to: "products#new_product", as: :add_product
+  post "/product/new_product",      to: "products#create"
   root "home#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

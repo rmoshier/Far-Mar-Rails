@@ -1,0 +1,8 @@
+<h2>Edit <%= @vendor.name %></h2>
+
+<form action='/vendor/<%=@vendor.id%>' method='POST'>
+  <input type="hidden" name="_method" value="PUT">
+  Name <input type='text' name='vendor[name]' value='<%= @vendor.name %>'/>
+
+  <input type = 'submit' value = 'submit changes'/>
+</form>
