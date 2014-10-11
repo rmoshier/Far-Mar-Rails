@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   get "/", to: "home#index"
+
+  get "/home/login",         to: "home#login"
+  post "/home/login",             to: "home#login_now"  
+
   get "/vendor/new_vendor",         to: "vendors#new_vendor"
   post "/vendor/new_vendor",        to: "vendors#create"
   get "/vendor/:id/vendor_landing", to: "vendors#vendor_landing"

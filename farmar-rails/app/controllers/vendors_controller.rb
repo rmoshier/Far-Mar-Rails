@@ -16,6 +16,16 @@ class VendorsController < ApplicationController
     @vendor=Vendor.find(params[:id])
     #redirect_to "/vendor/#{@vendor.id}/vendor_landing"
   end
+  
+  #def login
+    #@vendor=Vendor.find(params[:id])
+ # end
+
+  #def login_now
+    #@vendor=Vendor.find(id)
+    #session[:v_id] ||= @vendor.id
+    #redirect_to "/vendors/#{id}/vendor_landing"
+ # end
 
   def update
     @vendor=Vendor.find(params[:id])

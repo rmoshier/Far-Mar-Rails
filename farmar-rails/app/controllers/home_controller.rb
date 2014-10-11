@@ -1,6 +1,15 @@
 class HomeController < ApplicationController
   def index
   end
+  
+  def login
+  end
+
+  def login_now 
+    @vendor=Vendor.find(params[:id])
+    session[:vendor_id] = @vendor.id
+    redirect_to "/vendors/#{@vendor.id}/vendor_landing"
+  end
 
  # def new_vendor
   #  @vendor=Vendor.new
