@@ -1,0 +1,12 @@
+<h2>New Vendor</h2>
+
+<form action='/vendor/new_vendor' method='POST'>
+  New Vendor Name <input type='text' name='vendor[name]' />
+  <input type='submit' />
+</form>
+
+<script>
+  <% if params[:notice].present? %>
+    alert(<%= params[:notice] %>;
+  <% end %>
+</script>

@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  background-color: #fdf6e3;
+  text-align: center;
+  font-family: 'Overlock';
+  
+}
+
+.title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Overlock';
+  font-size: 55px;
+  margin: 0 auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.main_menu {
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background-color: #FFDB58;
+}
+
+.main_menu li {
+  margin: 0 20px;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+  padding-top: 50px;
+  font-size: 22px;
+  padding-bottom: 50px;
+}
+
+.field {
+  padding-top: 25px;
+  padding-left: 25px; 
+  padding-right: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFDB58;
+
+}
+  
+h1{
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  color: #859900;
+}
+
+h2{
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  color: #859900;
+}
+
+h3{
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  color: #859900;
+}
+
+a:hover{
+  color: #d33682
+}
