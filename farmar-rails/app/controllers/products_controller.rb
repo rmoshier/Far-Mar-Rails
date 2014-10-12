@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
 
   def product_list
     @products = Product.all
-    #@product.vendor_id = session[:v_id]
   end
 
   def edit
@@ -48,16 +47,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name)
   end
-
-
-  # def destroy
-  #   @vendor = Vendor.find(params[:id])
-  #   @vendor.destroy
-  #   redirect_to "/"
-  # end
-  #
-  # def destroy_landing
-  #   @vendor=Vendor.find(params[:id])
-  # end
 
 end

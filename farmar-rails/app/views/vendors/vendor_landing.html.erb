@@ -1,6 +1,6 @@
 <h1> Welcome, <%= @vendor.name %>! Your unique ID number is <%= @vendor.id %>. Please record your ID for future login.</h1>
 
-<%= link_to "Edit vendor", edit_vendor_path(@vendor.id) %> <!-- vendor? vendors? -->
+<%= link_to "Edit vendor", edit_vendor_path(@vendor.id) %> 
 <br>
 <a href="/vendor/<%=@vendor.id%>/destroy_landing">Delete vendor</a>
 
@@ -15,3 +15,10 @@
 <%= link_to "Add market", add_market_path(@vendor.id) %>
 <br>
 <%= link_to "Edit market", edit_market_path(@vendor.id) %>
+
+<hr>
+
+<form action = "<%= end_session_path %>" method= "POST">
+  <input type = "hidden" name="_method" value = "PUT">
+  <input type = "submit" value = "Log out">
+</form>

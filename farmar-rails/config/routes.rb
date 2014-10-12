@@ -1,31 +1,35 @@
 Rails.application.routes.draw do
 
-  get "/", to: "home#index"
+  # Home - login and logout, includes sessions methods
+  get "/",                            to: "home#index"
+  get "/home/login",                  to: "home#login"
+  get "/home/session",                to: "sessions#update", as: :session
+  put "/home/logout",                 to: "sessions#clear", as: :end_session
+  
+  # Vendors - Create, edit, and delete
+  get "/vendor/new_vendor",           to: "vendors#new_vendor"
+  post "/vendor/new_vendor",          to: "vendors#create"
+  get "/vendor/:id/vendor_landing",   to: "vendors#vendor_landing"
+  get "/vendor/:id/edit",             to: "vendors#edit", as: :edit_vendor
+  put "/vendor/:id",                  to: "vendors#update"
+  get "/vendor/:id/destroy_landing",  to: "vendors#destroy_landing"
+  get "/vendor/:id/destroy",          to: "vendors#destroy"
 
-  get "/home/login",         to: "home#login"
-  post "/home/login",             to: "home#login_now"  
-
-  get "/vendor/new_vendor",         to: "vendors#new_vendor"
-  post "/vendor/new_vendor",        to: "vendors#create"
-  get "/vendor/:id/vendor_landing", to: "vendors#vendor_landing"
-  #something is wrong here
-
-  get "/vendor/:id/edit",           to: "vendors#edit", as: :edit_vendor
-  put "/vendor/:id",                to: "vendors#update"
-  get "/vendor/:id/destroy_landing",to: "vendors#destroy_landing"
-  get "/vendor/:id/destroy",        to: "vendors#destroy"
-  get "/product/new_product",       to: "products#new_product", as: :add_product
-  post "/product/new_product",      to: "products#create"
-  get "/product/:id/product_list",  to: "products#product_list"
-  get "/product/:id/edit",          to: "products#edit", as: :edit_product
-  put "/product/:id",               to: "products#update"
+  # Products - Create, view all, edit, and delete
+  get "/product/new_product",         to: "products#new_product", as: :add_product
+  post "/product/new_product",        to: "products#create"
+  get "/product/:id/product_list",    to: "products#product_list"
+  get "/product/:id/edit",            to: "products#edit", as: :edit_product
+  put "/product/:id",                 to: "products#update"
   get "/product/:id/destroy_landing", to: "products#destroy_landing", as: :delete_product_landing
-  get "/product/:id/destroy",       to: "products#destroy", as: :delete_product
+  get "/product/:id/destroy",         to: "products#destroy", as: :delete_product
 
-  get "/market/new_market",         to: "markets#new_market", as: :add_market
-  post "/market/new_market",        to: "markets#create"
-  get "/market/:id/edit",           to: "markets#edit", as: :edit_market
-  put "/market/:id",                to: "markets#update"
+  # Markets - Create and edit
+  get "/market/new_market",           to: "markets#new_market", as: :add_market
+  post "/market/new_market",          to: "markets#create"
+  get "/market/:id/edit",             to: "markets#edit", as: :edit_market
+  put "/market/:id",                  to: "markets#update"
+
 
   root "home#index"
 

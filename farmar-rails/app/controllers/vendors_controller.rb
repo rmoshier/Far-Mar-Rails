@@ -8,24 +8,13 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new(vendor_params)
     @vendor.save
     session[:v_id] = @vendor.id
-    redirect_to "/vendor/#{@vendor.id}/vendor_landing" #maybe want to take this out?
+    redirect_to "/vendor/#{@vendor.id}/vendor_landing"
   end
 
   def vendor_landing
-    #@v = Vendor.find(session[:v_id])
     @vendor=Vendor.find(params[:id])
-    #redirect_to "/vendor/#{@vendor.id}/vendor_landing"
   end
   
-  #def login
-    #@vendor=Vendor.find(params[:id])
- # end
-
-  #def login_now
-    #@vendor=Vendor.find(id)
-    #session[:v_id] ||= @vendor.id
-    #redirect_to "/vendors/#{id}/vendor_landing"
- # end
 
   def update
     @vendor=Vendor.find(params[:id])
