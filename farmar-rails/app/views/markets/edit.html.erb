@@ -1,0 +1,9 @@
+<h1>Edit <%= @market.name %></h1>
+
+<div class = "field">
+  <form action='/market/<%=@market.id%>' method='POST'>
+    <input type="hidden" name="_method" value="PUT">
+    Market name: <input type='text' name='market[name]' value='<%= @market.name %>'/>
+    <input type = 'submit' value = 'Submit changes'/>
+  </form>
+</div>
