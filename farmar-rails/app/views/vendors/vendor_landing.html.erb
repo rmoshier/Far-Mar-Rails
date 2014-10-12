@@ -1,21 +1,26 @@
-<h1> Welcome, <%= @vendor.name %>! Your unique ID number is <%= @vendor.id %>. Please record your ID for future login.</h1>
-
-<%= link_to "Edit vendor", edit_vendor_path(@vendor.id) %> 
-<br>
-<a href="/vendor/<%=@vendor.id%>/destroy_landing">Delete vendor</a>
-
+<h1><b> Welcome, <%= @vendor.name %>!</b> </h1>
+<p><b>Your unique ID number is <%= @vendor.id %>. Please record your ID for future login.</b></p>
 <hr>
-
-<%= link_to "Add product", add_product_path(@vendor.id) %>
-<br>
-<a href="/product/<%=@vendor.id%>/product_list">View all products</a>
-
-<hr>
-
-<%= link_to "Add market", add_market_path(@vendor.id) %>
-<br>
-<%= link_to "Edit market", edit_market_path(@vendor.id) %>
-
+<ul class="main_menu">
+  <li>Vendor options 
+    <br>
+    <%= link_to "Edit vendor", edit_vendor_path(@vendor.id) %> 
+    <br>
+    <a href="/vendor/<%=@vendor.id%>/destroy_landing">Delete vendor</a>
+  </li>
+  <li>Product options
+    <br>
+    <%= link_to "Add product", add_product_path(@vendor.id) %>
+    <br>
+    <a href="/product/<%=@vendor.id%>/product_list">View all products</a>
+  </li>
+  <li>Market options
+    <br>
+    <%= link_to "Add market", add_market_path(@vendor.id) %>
+    <br>
+    <%= link_to "Edit market", edit_market_path(@vendor.id) %>
+  </li>
+</ul>
 <hr>
 
 <form action = "<%= end_session_path %>" method= "POST">

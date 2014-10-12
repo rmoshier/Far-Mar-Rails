@@ -1,8 +1,9 @@
-<h2>Edit <%= @market.name %></h2>
+<h1>Edit <%= @market.name %></h1>
 
-<form action='/market/<%=@market.id%>' method='POST'>
-  <input type="hidden" name="_method" value="PUT">
-  Name <input type='text' name='market[name]' value='<%= @market.name %>'/>
-
-  <input type = 'submit' value = 'submit changes'/>
-</form>
+<div class = "field">
+  <form action='/market/<%=@market.id%>' method='POST'>
+    <input type="hidden" name="_method" value="PUT">
+    Market name: <input type='text' name='market[name]' value='<%= @market.name %>'/>
+    <input type = 'submit' value = 'Submit changes'/>
+  </form>
+</div>

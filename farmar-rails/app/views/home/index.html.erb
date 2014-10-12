@@ -1,9 +1,6 @@
-<h1>Home page</h1>
-
-<h2>Welcome to FarMar!</h2>
-
-<h3>
-If you are a new user, please <%= link_to "click here", "/vendor/new_vendor" %>.
-<br>
-If you already have an account, please <%= link_to "click here", "/home/login" %> to login.
-</h3>
+  <h1 class = "title"><b>Welcome to FarMar!</b></h1>
+  <br>
+  <ul class = "main_menu">
+    <li>New to FarMar? <br> <%= link_to "Register", "/vendor/new_vendor" %></li>
+    <li>Have an account? <br>  <%= link_to "Sign in", "/home/login" %></li>
+  </ul>

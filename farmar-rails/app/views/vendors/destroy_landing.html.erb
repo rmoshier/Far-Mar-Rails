@@ -1,3 +1,3 @@
-<h2>Welcome, <%= @vendor.name %>. Are you sure you want to delete yourself?</h2>
+<h1><%= @vendor.name %>, are you sure you want to delete yourself?</h1>
 
-<%= link_to "Yep!", "/vendor/#{@vendor.id}/destroy" %>
+<%= link_to "Yes, please delete me!", "/vendor/#{@vendor.id}/destroy" %>

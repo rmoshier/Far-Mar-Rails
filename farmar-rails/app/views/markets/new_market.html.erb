@@ -1,9 +1,9 @@
-<h2>Market Page</h2>
-<h3>What market do you belong to?</h3>
+<h1>What market do you belong to?</h1>
 
-<form action='/market/new_market' method='POST'>
-  <input type="hidden" name="_method">
-  Name <input type='text' name='market[name]'/>
-
-  <input type = 'submit' value = 'submit changes'/>
-</form>
+<div class="field">
+  <form action='/market/new_market' method='POST'>
+    <input type="hidden" name="_method">
+    Market name: <input type='text' name='market[name]'/>
+    <input type = 'submit' value = 'Submit'/>
+  </form>
+</div>
